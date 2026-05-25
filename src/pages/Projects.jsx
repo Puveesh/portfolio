@@ -9,7 +9,8 @@ const filters = [
   { id: "all", label: "All Works" },
   { id: "frontend", label: "Frontend" },
   { id: "backend", label: "Backend" },
-  { id: "ai_ml", label: "AI & ML" },
+  { id: "mobile", label: "Mobile App" },
+  { id: "full", label: "Full Stack" },
 ];
 
 export default function Projects() {
@@ -25,15 +26,17 @@ export default function Projects() {
       <section className="pointer-events-auto">
         {/* Page Header */}
         <div className="max-w-2xl mb-12">
-          <h2 className="text-[10px] uppercase tracking-[0.25em] font-bold text-neutral-400 dark:text-neutral-500 mb-2">
+          <h2 className="text-[11px] uppercase tracking-[0.25em] font-bold text-neutral-400 dark:text-neutral-500 mb-2">
             Showcase
           </h2>
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-white mb-4">
             Curated Creations
           </h1>
           <p className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed font-light">
-            An interactive catalog of my software engineering endavours, ranging from highly optimized frontend architectures to full-stack ecosystems and smart vision systems.
+            Building scalable applications, immersive interfaces, and intelligent systems through code, creativity, and innovation.
           </p>
+          <br></br>
+          <p>Note: Some projects may include only selected resources such as a live demo, GitHub repository, or LinkedIn showcase depending on deployment status, privacy, or project type. </p>
         </div>
 
         {/* Dynamic Filtering Tabs */}
@@ -77,10 +80,10 @@ export default function Projects() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
                 whileHover={{ y: -6 }}
-                className="flex flex-col overflow-hidden rounded-xl border border-neutral-200/60 dark:border-neutral-800/80 bg-neutral-50/20 dark:bg-neutral-950/20 shadow-sm hover:shadow-md transition-all duration-300 glassmorphism"
+                className="flex flex-col overflow-hidden rounded-xl border border-neutral-200/60 dark:border-neutral-800/80 bg-neutral-50/20 dark:bg-neutral-950/20 shadow-sm hover:shadow-md transition-all duration-20 glassmorphism"
               >
                 {/* Visual Thumbnail */}
-                <div className="relative aspect-video overflow-hidden border-b border-neutral-200/60 dark:border-neutral-800/80 group">
+                <div className="relative aspect-photo overflow-hidden border-b border-neutral-200/60 dark:border-neutral-800/80 group">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -119,7 +122,7 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center space-x-1 text-xs text-neutral-500 hover:text-black dark:text-neutral-400 dark:hover:text-white font-semibold transition-colors duration-200"
                     >
-                      <Github size={13} />
+                      <Github size={12} />
                       <span>Repository</span>
                     </a>
                     <a
@@ -128,8 +131,17 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center space-x-1 text-xs text-blue-600 dark:text-blue-400 hover:underline font-semibold"
                     >
-                      <ExternalLink size={13} />
-                      <span>Live Site</span>
+                      <ExternalLink size={12} />
+                      <span>Live Site/App APK</span>
+                    </a>
+                    <a
+                      href={project.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center space-x-1 text-xs text-blue-600 dark:text-blue-400 hover:underline font-semibold"
+                    >
+                      <ExternalLink size={12} />
+                      <span>LinkedIn Post</span>
                     </a>
                   </div>
                 </div>
