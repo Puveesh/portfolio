@@ -22,13 +22,13 @@ export default function Navbar() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="sticky top-0 z-40 w-full glassmorphism glass-light dark:glass-dark border-b border-neutral-200/50 dark:border-neutral-800/50"
+      className="sticky top-0 z-40 w-full glassmorphism bg-neutral-100/50 dark:glass-dark border-b border-neutral-200/50 dark:border-neutral-800/50"
     >
-      <div className="mx-auto flex max-w-6xl h-16 items-center justify-between px-6">
+      <div className="mx-auto flex max-w-6xl h-17 items-center justify-between px-6">
         {/* Brand Logo */}
         <Link to="/" className="flex items-center space-x-1 hover:opacity-85 transition-opacity">
-          <span className="text-base font-bold tracking-[0.2em] text-neutral-900 dark:text-white uppercase">
-            PK<span className="text-blue-500">.</span>
+          <span className="text-lg font-bold tracking-[0.2em] text-neutral-900 dark:text-white uppercase">
+            pk<span className="text-blue-500 ">.</span>
           </span>
         </Link>
 
@@ -42,7 +42,7 @@ export default function Navbar() {
                 to={link.path}
                 className={cn(
                   "relative px-4 py-1.5 text-xs font-medium uppercase tracking-wider theme-transition hover:text-neutral-900 dark:hover:text-white",
-                  isActive ? "text-neutral-900 dark:text-white" : "text-neutral-500 dark:text-neutral-400"
+                  isActive ? "text-neutral-900 dark:text-white" : "text-neutral-800"
                 )}
               >
                 {isActive && (
@@ -60,7 +60,7 @@ export default function Navbar() {
 
         {/* Desktop Theme Toggle + Call to Action */}
         <div className="hidden md:flex items-center space-x-4">
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
           <a
             href={portfolioData.personalInfo.resumeUrl}
             target="_blank"
@@ -74,7 +74,7 @@ export default function Navbar() {
 
         {/* Mobile controls */}
         <div className="flex md:hidden items-center space-x-3">
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-100/50 dark:bg-neutral-900/50 text-neutral-800 dark:text-neutral-200"

@@ -11,7 +11,7 @@ export default function Footer() {
         {/* Left: Brand/Copyright */}
         <div className="text-center md:text-left">
           <p className="text-[11px] uppercase tracking-[0.15em] text-neutral-500 dark:text-neutral-400">
-            &copy; {new Date().getFullYear()} {name}. Built with precision.
+            &copy; {new Date().getFullYear()}. {name}. Built with precision.
           </p>
         </div>
 
@@ -24,7 +24,7 @@ export default function Footer() {
             className="text-neutral-500 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white transition-colors duration-300"
             aria-label="GitHub Link"
           >
-            <Github size={16} className="stroke-[1.5]" />
+            <Github size={20} className="stroke-[2]" />
           </a>
           <a
             href={socials.linkedin}
@@ -33,7 +33,7 @@ export default function Footer() {
             className="text-neutral-500 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white transition-colors duration-300"
             aria-label="LinkedIn Link"
           >
-            <Linkedin size={16} className="stroke-[1.5]" />
+            <Linkedin size={20} className="stroke-[2]" />
           </a>
           <a
             href={socials.instagram}
@@ -42,14 +42,14 @@ export default function Footer() {
             className="text-neutral-500 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white transition-colors duration-300"
             aria-label="Instagram Link"
           >
-            <Instagram size={16} className="stroke-[1.5]" />
+            <Instagram size={20} className="stroke-[2]" />
           </a>
           <a
             href={`mailto:${socials.email}`}
             className="text-neutral-500 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white transition-colors duration-300"
             aria-label="Email Link"
           >
-            <Mail size={16} className="stroke-[1.5]" />
+            <Mail size={20} className="stroke-[2]" />
           </a>
         </div>
       </div>

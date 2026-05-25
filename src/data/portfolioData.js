@@ -3,7 +3,7 @@ export const portfolioData = {
     name: "Puveesh Keshav M",
     // role: "Full-Stack & AI Engineer",
     tagline: "Building premium digital interfaces and intelligent web experiences.",
-    intro: "I design and develop premium, minimalistic, and highly interactive web applications that blend modern design aesthetics with state-of-the-art AI systems.",
+    intro: "I design and develop premium, minimalistic, and highly interactive web applications that blend modern design aesthetics with state-of-the-art AI systems. Beyond tech, I’m also passionate about music production and sound design.",
     resumeUrl: "Resume.pdf",
     socials: {
       github: "https://github.com/Puveesh",

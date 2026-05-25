@@ -14,9 +14,9 @@ export default function App() {
 
   return (
     <>
-      <LoadingScreen onComplete={() => setIsLoading(false)} />
+      {/* <LoadingScreen onComplete={() => setIsLoading(false)} /> */}
       
-      {!isLoading && (
+      {/* {!isLoading && ( */}
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<MainLayout />}>
@@ -27,7 +27,7 @@ export default function App() {
             </Route>
           </Routes>
         </AnimatePresence>
-      )}
+      {/* )} */}
     </>
   );
 }

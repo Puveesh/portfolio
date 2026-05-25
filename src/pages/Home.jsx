@@ -11,7 +11,8 @@ import {
   Calendar,
   Briefcase,
   GraduationCap,
-  BrainCircuit
+  BrainCircuit,
+  Languages
 } from "lucide-react";
 import { portfolioData } from "../data/portfolioData";
 import PageTransition from "../components/PageTransition";
@@ -48,13 +49,14 @@ export default function Home() {
     frontend: <Code className="text-blue-500" size={18} />,
     backend: <Server className="text-emerald-500" size={18} />,
     ai_ml: <Cpu className="text-purple-500" size={18} />,
+    language: <Languages className="text-violet-500" size={18} />,
     tools: <Terminal className="text-amber-500" size={18} />,
   };
 
   return (
     <PageTransition>
       {/* 1. HERO SECTION */}
-      <section className="relative flex flex-col items-center text-center justify-center min-h-[70vh] py-12 md:py-20 pointer-events-auto">
+      <section className="relative flex flex-col items-center text-center justify-center min-h-[0vh] py-12 md:py-20 pointer-events-auto">
         {/* Glow behind title */}
         <div className="absolute top-[30%] w-[300px] h-[300px] rounded-full bg-blue-500/10 dark:bg-blue-400/[0.04] blur-[100px] pointer-events-none" />
 
@@ -133,7 +135,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="md:col-span-1"
           >
-            <h2 className="text-[10px] uppercase tracking-[0.25em] font-bold text-neutral-400 dark:text-neutral-500 mb-2">
+            <h2 className="text-[11px] uppercase tracking-[0.25em] font-bold text-neutral-400 dark:text-neutral-500 mb-2">
               Background / Bio
             </h2>
             <h3 className="text-xl font-bold text-neutral-900 dark:text-white">
@@ -168,7 +170,7 @@ export default function Home() {
       {/* 3. SKILLS GRID SECTION */}
       <section className="py-12 md:py-24 border-t border-neutral-100 dark:border-neutral-900/60 pointer-events-auto">
         <div className="mb-12">
-          <h2 className="text-[10px] uppercase tracking-[0.25em] font-bold text-neutral-400 dark:text-neutral-500 mb-2">
+          <h2 className="text-[11px] uppercase tracking-[0.25em] font-bold text-neutral-400 dark:text-neutral-500 mb-2">
             Expertise / Tooling
           </h2>
           <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">
@@ -187,8 +189,8 @@ export default function Home() {
             <motion.div
               key={category}
               variants={fadeInUp}
-              whileHover={{ y: -10 }}
-              className="flex flex-col rounded-xl border border-neutral-200/60 dark:border-neutral-800/80 bg-neutral-50/30 dark:bg-neutral-900/30 p-6 shadow-sm hover:shadow-md transition-all duration-300 glassmorphism"
+              whileHover={{ y: -20 }}
+              className="flex flex-col rounded-xl border border-neutral-200/60 dark:border-neutral-800/80 bg-neutral-50/30 dark:bg-neutral-900/30 p-6 shadow-sm hover:shadow-md transition-all duration-20 glassmorphism"
             >
               <div className="flex items-center space-x-3 mb-6">
                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-100 dark:bg-neutral-800">
@@ -227,7 +229,7 @@ export default function Home() {
       {/* 4. EXPERIENCE & EDUCATION TIMELINE */}
       <section className="py-12 md:py-24 border-t border-neutral-100 dark:border-neutral-900/60 pointer-events-auto">
         <div className="mb-16">
-          <h2 className="text-[10px] uppercase tracking-[0.25em] font-bold text-neutral-400 dark:text-neutral-500 mb-2">
+          <h2 className="text-[11px] uppercase tracking-[0.25em] font-bold text-neutral-400 dark:text-neutral-500 mb-2">
             Chronology
           </h2>
           <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">
