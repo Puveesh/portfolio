@@ -13,28 +13,36 @@ export const portfolioData = {
     },
   },
   aboutMe: {
-    shortBio: "Passionate software developer building modern web applications with seamless frontend experiences, efficient backend systems, and machine learning integration. Driven by curiosity to understand how things work at their core, I enjoy hands-on hardware projects and exploring the intersection of technology, creativity, and music.",
-    passionStatement: "I believe that software should be beautiful, clean, and intuitive. My design principles are heavily inspired by modern minimalism, prioritizing subtle details, flawless spacing, and fluid motion over flashy clutter.",
-    careerInterests: [
-      "Next-generation React frameworks and server architectures",
-      "Embedding machine learning models directly within real-time browser experiences",
-      "Motion design, interaction dynamics, and high-fidelity custom design systems",
-    ],
-    principles: [
-      {
-        title: "Intentional Design",
-        description: "Every pixel, spacing, and micro-animation must serve a specific communicative purpose, enhancing clarity rather than adding noise.",
-      },
-      {
-        title: "Intelligent Logic",
-        description: "Bridging the gap between robust, fast database design and client-side predictive capabilities through optimized AI models.",
-      },
-      {
-        title: "Flawless Performance",
-        description: "Near-instantaneous loading times, optimized asset deliveries, and a consistent 60 FPS animation execution across all platforms.",
-      },
-    ],
-  },
+  shortBio:
+    "Curious and hands-on software developer passionate about building modern digital experiences across web, mobile, AI, and cybersecurity. I enjoy tinkering with new technologies, developing scalable applications, experimenting with hardware systems, and blending creativity with engineering.",
+
+  passionStatement:
+    "I believe technology should feel immersive, intuitive, and purposeful. Whether developing full-stack systems, crafting smooth UI interactions, or exploring intelligent technologies, I focus on building experiences that are clean, performant, and meaningful.",
+
+  careerInterests: [
+    "Full-stack application development and scalable backend architectures",
+    "Cybersecurity, intelligent systems, and AI-powered experiences",
+    "Interactive UI engineering, mobile applications, and creative technology experimentation",
+  ],
+
+  principles: [
+    {
+      title: "Build with Purpose",
+      description:
+        "Every project should solve a real problem, create meaningful experiences, or push technical boundaries through practical innovation.",
+    },
+    {
+      title: "Curiosity-Driven Engineering",
+      description:
+        "Constantly exploring how systems work internally — from software architectures and AI models to hardware integrations and emerging technologies.",
+    },
+    {
+      title: "Clean & Scalable Systems",
+      description:
+        "Prioritizing maintainable architectures, smooth user experiences, optimized performance, and scalable development practices across every product.",
+    },
+  ],
+},
   skills: {
     frontend: [
       { name: "React", level: 95 },
@@ -65,6 +73,17 @@ export const portfolioData = {
   },
   projects: [
     {
+      id: "frontend",
+      title: "Portfolio",
+      description: "A premium personal portfolio platform designed to showcase software engineering projects, AI-driven applications, cybersecurity work, and creative development through immersive UI interactions and modern web technologies.",
+      image: "./public/portfolio.png",
+      tags: ["Frontend", "React", "Vite", "Tailwind CSS", "Framer Motion"],
+      githubUrl: "https://github.com/Puveesh/Portfolio",
+      liveUrl: "/",
+      linkedin: "https://linkedin.com/in/puveesh-keshav-m-24475b309",
+      category: "frontend",
+    },
+    {
       id: "full-stack",
       title: "YapiChat: Minimal Private Messaging",
       description: "A focused full-stack chat application built with React, Supabase, and Vercel, designed for meaningful 1-on-1 conversations through private messaging, voice notes, and media sharing in a distraction-free environment.",
@@ -81,20 +100,32 @@ export const portfolioData = {
       description: "A modern Android music player built with Android Studio and ExoPlayer, featuring background playback, waveform-based UI interactions, favorites management, and a smooth immersive listening experience.",
       image: "./public/pulsebeat.png",
       tags: ["Android", "Kotlin", "ExoPlayer", "Java"],
-      githubUrl: "https://github.com",
-      liveUrl: "https://vercel.com",
+      githubUrl: "https://github.com/puveesh",
+      liveUrl: "./public/PulseBeat.apk",
       linkedin: "https://www.linkedin.com/posts/puveesh-keshav-m-24475b309_androiddevelopment-musicplayerapp-internship2025-ugcPost-7350494620822179840-GkcH/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE6ZhJQB1xkBZe8AEj1JLk7lF5rjie02siE",
       category: "mobile",
     },
     {
-      id: "vision-studio",
-      title: "Vision Studio Realtime Filter",
-      description: "A computer vision tool built using OpenCV and Python backends that tracks hand movements to overlay high-fidelity interactive digital art directly onto live video streams.",
-      image: "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=800&q=80",
-      tags: ["React", "Python", "OpenCV", "Express"],
-      githubUrl: "https://github.com",
-      liveUrl: "https://vercel.com",
-      category: "ai_ml",
+      id: "hardware",
+      title: "ClimateSync: IoT Weather Monitoring System",
+      description: "A prototype IoT-based weather monitoring system built using NodeMCU and sensor integration, designed to collect, process, and visualize real-time environmental data through embedded hardware and smart sensing technologies.",
+      image: "./public/weather 2.jpeg",
+      tags: ["Hardware", "C++", "NodeMCU", "Sensors", "ESP8266","IoT"],
+      githubUrl: "https://github.com/Puveesh/",
+      liveUrl: "/projects",
+      linkedin: "https://linkedin.com/in/puveesh-keshav-m-24475b309",
+      category: "hardware",
+    },
+    {
+      id: "backend",
+      title: "Turf Management System",
+      description: "A Backend turf booking and management platform built with Spring Boot, designed to streamline slot reservations, user management, scheduling, and real-time booking operations through a scalable backend architecture.",
+      image: "./public/turf.jpg",
+      tags: ["Backend", "Java", "Maven", "SpringBoot"],
+      githubUrl: "https://github.com/Puveesh/Turf-Management",
+      liveUrl: "/projects",
+      linkedin: "https://linkedin.com/in/puveesh-keshav-m-24475b309",
+      category: "backend",
     },
   ],
   timeline: [

@@ -11,6 +11,7 @@ const filters = [
   { id: "backend", label: "Backend" },
   { id: "mobile", label: "Mobile App" },
   { id: "full", label: "Full Stack" },
+  { id: "hardware", label: "Hardware" },
 ];
 
 export default function Projects() {
@@ -32,11 +33,11 @@ export default function Projects() {
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-white mb-4">
             Curated Creations
           </h1>
-          <p className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed font-light">
+          <p>
             Building scalable applications, immersive interfaces, and intelligent systems through code, creativity, and innovation.
           </p>
           <br></br>
-          <p>Note: Some projects may include only selected resources such as a live demo, GitHub repository, or LinkedIn showcase depending on deployment status, privacy, or project type. </p>
+          <p className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed font-light">Note: Some projects may include only selected resources such as a live demo, GitHub repository, or LinkedIn showcase depending on deployment status, privacy, or project type. </p>
         </div>
 
         {/* Dynamic Filtering Tabs */}
@@ -83,7 +84,7 @@ export default function Projects() {
                 className="flex flex-col overflow-hidden rounded-xl border border-neutral-200/60 dark:border-neutral-800/80 bg-neutral-50/20 dark:bg-neutral-950/20 shadow-sm hover:shadow-md transition-all duration-20 glassmorphism"
               >
                 {/* Visual Thumbnail */}
-                <div className="relative aspect-photo overflow-hidden border-b border-neutral-200/60 dark:border-neutral-800/80 group">
+                <div className="relative h-55 overflow-hidden border-b border-neutral-200/60 dark:border-neutral-800/80 group">
                   <img
                     src={project.image}
                     alt={project.title}

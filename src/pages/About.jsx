@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Compass, Activity, ShieldCheck } from "lucide-react";
+import { ArrowRight, Compass, Activity, ShieldCheck, Lightbulb } from "lucide-react";
 import { portfolioData } from "../data/portfolioData";
 import PageTransition from "../components/PageTransition";
 
@@ -8,9 +8,9 @@ export default function About() {
   const { aboutMe } = portfolioData;
 
   const principleIcons = [
-    <Compass className="text-blue-500" size={18} />,
-    <Activity className="text-purple-500" size={18} />,
-    <ShieldCheck className="text-emerald-500" size={18} />,
+    <Compass className="text-blue-500" size={20} />,
+    <Lightbulb className="text-purple-500" size={20} />,
+    <ShieldCheck className="text-emerald-500" size={20} />,
   ];
 
   return (
@@ -18,7 +18,7 @@ export default function About() {
       <section className="pointer-events-auto">
         {/* Page Header */}
         <div className="max-w-2xl mb-12">
-          <h2 className="text-[10px] uppercase tracking-[0.25em] font-bold text-neutral-400 dark:text-neutral-500 mb-2">
+          <h2 className="text-[11px] uppercase tracking-[0.25em] font-bold text-neutral-400 dark:text-neutral-500 mb-2">
             My Story
           </h2>
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-white mb-4">
@@ -31,86 +31,10 @@ export default function About() {
           
           {/* Left Column: High-Tech Abstract SVG Graphic representing a system canvas */}
           <div className="lg:col-span-5 flex items-center justify-center">
-            <div className="relative w-full aspect-square max-w-[360px] rounded-2xl border border-neutral-200/50 dark:border-neutral-800/80 bg-neutral-50/20 dark:bg-neutral-950/20 flex items-center justify-center p-6 shadow-sm overflow-hidden glassmorphism">
+            <div className="relative w-full aspect-square max-w-[390px] rounded-2xl border border-neutral-200/50 dark:border-neutral-800/80 bg-neutral-50/20 dark:bg-neutral-950/20 flex items-center justify-center p-3 shadow-sm overflow-hidden glassmorphism">
               {/* Soft Ambient Inner Glow */}
               <div className="absolute w-[200px] h-[200px] rounded-full bg-blue-500/5 blur-[60px]" />
-
-              {/* Monogram Monolith SVG */}
-              <svg
-                width="100%"
-                height="100%"
-                viewBox="0 0 200 200"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="text-neutral-300 dark:text-neutral-800"
-              >
-                {/* Outer rotating track */}
-                <motion.circle
-                  cx="100"
-                  cy="100"
-                  r="85"
-                  stroke="currentColor"
-                  strokeWidth="0.75"
-                  strokeDasharray="4 6"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                />
-
-                {/* Inner smooth path */}
-                <motion.circle
-                  cx="100"
-                  cy="100"
-                  r="65"
-                  stroke="#3B82F6"
-                  strokeWidth="0.5"
-                  strokeOpacity="0.3"
-                />
-
-                {/* Orbiting dot indicator */}
-                <motion.circle
-                  cx="100"
-                  cy="35"
-                  r="3.5"
-                  fill="#3B82F6"
-                  animate={{
-                    rotate: 360,
-                    originX: "100px",
-                    originY: "100px"
-                  }}
-                  transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-                />
-
-                {/* Center digital cross-hairs */}
-                <path d="M100 80 V120 M80 100 H120" stroke="currentColor" strokeWidth="0.5" strokeOpacity="0.4" />
-
-                {/* Tech Monogram abstract nodes */}
-                <motion.path
-                  d="M60 140 L100 60 L140 140"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 2, ease: "easeInOut" }}
-                />
-                
-                <motion.path
-                  d="M100 60 V140"
-                  stroke="#3B82F6"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
-                />
-
-                {/* Numeric technical markers */}
-                <text x="100" y="25" fill="currentColor" fillOpacity="0.4" fontSize="6" textAnchor="middle" letterSpacing="1">01</text>
-                <text x="175" y="103" fill="currentColor" fillOpacity="0.4" fontSize="6" textAnchor="middle" letterSpacing="1">02</text>
-                <text x="100" y="182" fill="currentColor" fillOpacity="0.4" fontSize="6" textAnchor="middle" letterSpacing="1">03</text>
-                <text x="25" y="103" fill="currentColor" fillOpacity="0.4" fontSize="6" textAnchor="middle" letterSpacing="1">04</text>
-              </svg>
+              <img src="./public/myphoto2.jpg" alt="Profile" className="w-full h-full object-cover rounded-2xl"/>
             </div>
           </div>
 

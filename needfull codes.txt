@@ -1,0 +1,77 @@
+in about.jsx instead of line 37 (img) replace this
+{/* Monogram Monolith SVG */}
+<svg
+width="100%"
+height="100%"
+viewBox="0 0 200 200"
+fill="none"
+xmlns="http://www.w3.org/2000/svg"
+className="text-neutral-300 dark:text-neutral-800"
+>
+{/* Outer rotating track */}
+<motion.circle
+    cx="100"
+    cy="100"
+    r="85"
+    stroke="currentColor"
+    strokeWidth="0.75"
+    strokeDasharray="4 6"
+    animate={{ rotate: 360 }}
+    transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+/>
+
+{/* Inner smooth path */}
+<motion.circle
+    cx="100"
+    cy="100"
+    r="65"
+    stroke="#3B82F6"
+    strokeWidth="0.5"
+    strokeOpacity="0.3"
+/>
+
+{/* Orbiting dot indicator */}
+<motion.circle
+    cx="100"
+    cy="35"
+    r="3.5"
+    fill="#3B82F6"
+    animate={{
+    rotate: 360,
+    originX: "100px",
+    originY: "100px"
+    }}
+    transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+/>
+
+{/* Center digital cross-hairs */}
+<path d="M100 80 V120 M80 100 H120" stroke="currentColor" strokeWidth="0.5" strokeOpacity="0.4" />
+
+{/* Tech Monogram abstract nodes */}
+<motion.path
+    d="M60 140 L100 60 L140 140"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    initial={{ pathLength: 0 }}
+    animate={{ pathLength: 1 }}
+    transition={{ duration: 2, ease: "easeInOut" }}
+/>
+
+<motion.path
+    d="M100 60 V140"
+    stroke="#3B82F6"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    initial={{ pathLength: 0 }}
+    animate={{ pathLength: 1 }}
+    transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
+/>
+
+{/* Numeric technical markers */}
+<text x="100" y="25" fill="currentColor" fillOpacity="0.4" fontSize="6" textAnchor="middle" letterSpacing="1">01</text>
+<text x="175" y="103" fill="currentColor" fillOpacity="0.4" fontSize="6" textAnchor="middle" letterSpacing="1">02</text>
+<text x="100" y="182" fill="currentColor" fillOpacity="0.4" fontSize="6" textAnchor="middle" letterSpacing="1">03</text>
+<text x="25" y="103" fill="currentColor" fillOpacity="0.4" fontSize="6" textAnchor="middle" letterSpacing="1">04</text>
+</svg>
