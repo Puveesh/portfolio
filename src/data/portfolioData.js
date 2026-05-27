@@ -77,7 +77,7 @@ export const portfolioData = {
       title: "Portfolio",
       description: "A premium personal portfolio platform designed to showcase software engineering projects, AI-driven applications, cybersecurity work, and creative development through immersive UI interactions and modern web technologies.",
       image: "./public/portfolio.png",
-      tags: ["Frontend", "React", "Vite", "Tailwind CSS", "Framer Motion"],
+      tags: ["Frontend", "React", "Vite", "Tailwind CSS", "Framer Motion", "Formspree"],
       githubUrl: "https://github.com/Puveesh/Portfolio",
       liveUrl: "/",
       linkedin: "https://linkedin.com/in/puveesh-keshav-m-24475b309",
