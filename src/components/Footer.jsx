@@ -10,8 +10,8 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Left: Brand/Copyright */}
         <div className="text-center md:text-left">
-          <p className="text-[11px] uppercase tracking-[0.15em] text-neutral-500 dark:text-neutral-400">
-            &copy; {new Date().getFullYear()}. {name}. Built with precision.
+          <p className="text-[12px] uppercase tracking-[0.15em] text-neutral-500 dark:text-neutral-400">
+            &copy; {new Date().getFullYear()}. {name}. Built with precision & Passion.
           </p>
         </div>
 

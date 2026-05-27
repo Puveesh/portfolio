@@ -22,7 +22,7 @@ export default function About() {
             My Story
           </h2>
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-white mb-4">
-            Curious by Nature, Designer by Heart.
+            Driven by Curiosity, Built Through Code.
           </h1>
         </div>
 
@@ -79,7 +79,7 @@ export default function About() {
         {/* Core Architectural Principles Grid */}
         <div className="border-t border-neutral-100 dark:border-neutral-900/60 pt-16">
           <div className="mb-10 text-center lg:text-left">
-            <h2 className="text-[10px] uppercase tracking-[0.25em] font-bold text-neutral-400 dark:text-neutral-500 mb-2">
+            <h2 className="text-[11px] uppercase tracking-[0.25em] font-bold text-neutral-400 dark:text-neutral-500 mb-2">
               Philosophies
             </h2>
             <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">
@@ -95,8 +95,8 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -4 }}
-                className="flex flex-col p-6 rounded-xl border border-neutral-200/50 dark:border-neutral-800/80 bg-neutral-50/10 dark:bg-neutral-950/10 shadow-sm glassmorphism hover:shadow-md transition-all duration-300"
+                whileHover={{ y: -10 }}
+                className="flex flex-col p-6 rounded-xl border border-neutral-200/50 dark:border-neutral-800/80 bg-neutral-50/10 dark:bg-neutral-950/10 shadow-sm glassmorphism hover:shadow-md transition-all duration-10"
               >
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-100 dark:bg-neutral-900">

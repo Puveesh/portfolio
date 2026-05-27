@@ -23,17 +23,37 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!formData.name || !formData.email || !formData.message) return;
 
     setIsSubmitting(true);
-    // Mimic API submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 1800);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mnjrljyw", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
@@ -41,11 +61,11 @@ export default function Contact() {
       <section className="pointer-events-auto">
         {/* Page Header */}
         <div className="max-w-2xl mb-12">
-          <h2 className="text-[10px] uppercase tracking-[0.25em] font-bold text-neutral-400 dark:text-neutral-500 mb-2">
+          <h2 className="text-[11px] uppercase tracking-[0.25em] font-bold text-neutral-400 dark:text-neutral-500 mb-2">
             Get in touch
           </h2>
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-white mb-4">
-            Let's Collaborate.
+            Let's Collaborate!
           </h1>
           <p className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed font-light">
             I am always open to exploring novel engineering challenges, premium interface designs, or strategic technical roles. Fill in the form or reach out directly.
@@ -65,7 +85,7 @@ export default function Contact() {
               </h3>
               <div className="flex items-center space-x-3 text-xs text-neutral-500 dark:text-neutral-400">
                 <MapPin size={14} className="text-blue-500 flex-shrink-0" />
-                <span>San Francisco, California &bull; Remote Worldwide</span>
+                <span>Coimbatore, Tamil Nadu &bull; Remote Worldwide</span>
               </div>
             </div>
 
@@ -94,7 +114,7 @@ export default function Contact() {
 
             {/* Social Grid Connections */}
             <div className="space-y-4">
-              <h3 className="text-xs uppercase tracking-wider font-bold text-neutral-900 dark:text-white">
+              <h3 className="text-x uppercase tracking-wider font-bold text-neutral-900 dark:text-white">
                 Social Networks
               </h3>
               <div className="grid grid-cols-2 gap-3">
@@ -114,6 +134,15 @@ export default function Contact() {
                   className="flex items-center justify-between p-3 rounded-lg border border-neutral-200/50 dark:border-neutral-800/80 hover:bg-neutral-100/40 dark:hover:bg-neutral-900/40 transition-colors text-xs font-semibold text-neutral-700 dark:text-neutral-300"
                 >
                   <span>LinkedIn</span>
+                  <ArrowRight size={12} className="text-neutral-400" />
+                </a>
+                <a
+                  href={socials.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-3 rounded-lg border border-neutral-200/50 dark:border-neutral-800/80 hover:bg-neutral-100/40 dark:hover:bg-neutral-900/40 transition-colors text-xs font-semibold text-neutral-700 dark:text-neutral-300"
+                >
+                  <span>Instagram</span>
                   <ArrowRight size={12} className="text-neutral-400" />
                 </a>
               </div>
@@ -243,7 +272,7 @@ export default function Contact() {
                       Transmission Confirmed
                     </h3>
                     <p className="text-xs text-neutral-500 dark:text-neutral-400 max-w-sm mb-6 font-light">
-                      Thank you. Your inquiry has been securely processed and sent to the inbox of Alex Mercer. Expect a prompt response within 24 business hours.
+                      Thank you. Your inquiry has been securely processed and sent to the inbox of Puveesh Keshav M. Expect a prompt response within 24-48 hours.
                     </p>
                     <button
                       onClick={() => setIsSubmitted(false)}
