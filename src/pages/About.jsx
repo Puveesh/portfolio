@@ -34,7 +34,7 @@ export default function About() {
             <div className="relative w-full aspect-square max-w-[390px] rounded-2xl border border-neutral-200/50 dark:border-neutral-800/80 bg-neutral-50/20 dark:bg-neutral-950/20 flex items-center justify-center p-3 shadow-sm overflow-hidden glassmorphism">
               {/* Soft Ambient Inner Glow */}
               <div className="absolute w-[200px] h-[200px] rounded-full bg-blue-500/5 blur-[60px]" />
-              <img src="./public/myphoto2.jpg" alt="Profile" className="w-full h-full object-cover rounded-2xl"/>
+              <img src="/myphoto2.jpg" alt="Profile" className="w-full h-full object-cover rounded-2xl"/>
             </div>
           </div>
 
