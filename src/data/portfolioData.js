@@ -13,40 +13,40 @@ export const portfolioData = {
     },
   },
   aboutMe: {
-  shortBio:
-    "Curious and hands-on software developer passionate about building modern digital experiences across web, mobile, AI, and cybersecurity. I enjoy tinkering with new technologies, developing scalable applications, experimenting with hardware systems, and blending creativity with engineering.",
+    shortBio:
+      "Curious and hands-on software developer passionate about building modern digital experiences across web, mobile, AI, and cybersecurity. I enjoy tinkering with new technologies, developing scalable applications, experimenting with hardware systems, and blending creativity with engineering.",
 
-  passionStatement:
-    "I believe technology should feel immersive, intuitive, and purposeful. Whether developing full-stack systems, crafting smooth UI interactions, or exploring intelligent technologies, I focus on building experiences that are clean, performant, and meaningful.",
+    passionStatement:
+      "I believe technology should feel immersive, intuitive, and purposeful. Whether developing full-stack systems, crafting smooth UI interactions, or exploring intelligent technologies, I focus on building experiences that are clean, performant, and meaningful.",
 
-  careerInterests: [
-    "Full-stack application development and scalable backend architectures",
-    "Cybersecurity, intelligent systems, and AI-powered experiences",
-    "Interactive UI engineering, mobile applications, and creative technology experimentation",
-  ],
+    careerInterests: [
+      "Full-stack application development and scalable backend architectures",
+      "Cybersecurity, intelligent systems, and AI-powered experiences",
+      "Interactive UI engineering, mobile applications, and creative technology experimentation",
+    ],
 
-  principles: [
-    {
-      title: "Build with Purpose",
-      description:
-        "Every project should solve a real problem, create meaningful experiences, or push technical boundaries through practical innovation.",
-    },
-    {
-      title: "Curiosity-Driven Engineering",
-      description:
-        "Constantly exploring how systems work internally — from software architectures and AI models to hardware integrations and emerging technologies.",
-    },
-    {
-      title: "Clean & Scalable Systems",
-      description:
-        "Prioritizing maintainable architectures, smooth user experiences, optimized performance, and scalable development practices across every product.",
-    },
-  ],
-},
+    principles: [
+      {
+        title: "Build with Purpose",
+        description:
+          "Every project should solve a real problem, create meaningful experiences, or push technical boundaries through practical innovation.",
+      },
+      {
+        title: "Curiosity-Driven Engineering",
+        description:
+          "Constantly exploring how systems work internally — from software architectures and AI models to hardware integrations and emerging technologies.",
+      },
+      {
+        title: "Clean & Scalable Systems",
+        description:
+          "Prioritizing maintainable architectures, smooth user experiences, optimized performance, and scalable development practices across every product.",
+      },
+    ],
+  },
   skills: {
     frontend: [
       { name: "React", level: 95 },
-      { name: "Vite", level: 95},
+      { name: "Vite", level: 95 },
       { name: "Tailwind CSS", level: 98 },
       { name: "JavaScript (ES6+)", level: 92 },
       { name: "HTML & CSS", level: 96 },
@@ -58,11 +58,11 @@ export const portfolioData = {
       { name: "Springboot", level: 90 },
       { name: "FastAPI", level: 85 },
     ],
-    language:[
+    language: [
       { name: "Python", level: 90 },
       { name: "Java", level: 85 },
       { name: "C++", level: 75 },
-      { name: "SQL", level: 90},
+      { name: "SQL", level: 90 },
     ],
     tools: [
       { name: "Git", level: 95 },
@@ -87,7 +87,7 @@ export const portfolioData = {
       id: "full-stack",
       title: "YapiChat: Minimal Private Messaging",
       description: "A focused full-stack chat application built with React, Supabase, and Vercel, designed for meaningful 1-on-1 conversations through private messaging, voice notes, and media sharing in a distraction-free environment.",
-      image: "/yapichat.png",
+      image: "/YapiChat.png",
       tags: ["Full-Stack", "Vite", "Vercel", "SupaBase"],
       githubUrl: "https://github.com/Puveesh/Chatting-app",
       liveUrl: "https://chatting-app-ashen.vercel.app/",
@@ -98,7 +98,7 @@ export const portfolioData = {
       id: "mobile-app",
       title: "PulseBeat: Smart Music Player",
       description: "A modern Android music player built with Android Studio and ExoPlayer, featuring background playback, waveform-based UI interactions, favorites management, and a smooth immersive listening experience.",
-      image: "/pulsebeat.png",
+      image: "/PulseBeat.png",
       tags: ["Android", "Kotlin", "ExoPlayer", "Java"],
       githubUrl: "https://github.com/puveesh",
       liveUrl: "./public/PulseBeat.apk",
@@ -110,7 +110,7 @@ export const portfolioData = {
       title: "ClimateSync: IoT Weather Monitoring System",
       description: "A prototype IoT-based weather monitoring system built using NodeMCU and sensor integration, designed to collect, process, and visualize real-time environmental data through embedded hardware and smart sensing technologies.",
       image: "/weather 2.jpeg",
-      tags: ["Hardware", "C++", "NodeMCU", "Sensors", "ESP8266","IoT"],
+      tags: ["Hardware", "C++", "NodeMCU", "Sensors", "ESP8266", "IoT"],
       githubUrl: "https://github.com/Puveesh/",
       liveUrl: "/projects",
       linkedin: "https://linkedin.com/in/puveesh-keshav-m-24475b309",
@@ -120,7 +120,7 @@ export const portfolioData = {
       id: "backend",
       title: "Turf Management System",
       description: "A Backend turf booking and management platform built with Spring Boot, designed to streamline slot reservations, user management, scheduling, and real-time booking operations through a scalable backend architecture.",
-      image: "/turf.jpg",
+      image: "/Turf.jpg",
       tags: ["Backend", "Java", "Maven", "SpringBoot"],
       githubUrl: "https://github.com/Puveesh/Turf-Management",
       liveUrl: "/projects",
