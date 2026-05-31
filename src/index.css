@@ -42,7 +42,7 @@
 }
 
 .bg-dot-grid-light {
-  background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
