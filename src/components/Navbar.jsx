@@ -60,7 +60,7 @@ export default function Navbar() {
 
         {/* Desktop Theme Toggle + Call to Action */}
         <div className="hidden md:flex items-center space-x-4">
-          {/* <ThemeToggle /> */}
+          <ThemeToggle />
           <a
             href={portfolioData.personalInfo.resumeUrl}
             target="_blank"
@@ -74,7 +74,7 @@ export default function Navbar() {
 
         {/* Mobile controls */}
         <div className="flex md:hidden items-center space-x-3">
-          {/* <ThemeToggle /> */}
+          <ThemeToggle />
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-100/50 dark:bg-neutral-900/50 text-neutral-800 dark:text-neutral-200"
