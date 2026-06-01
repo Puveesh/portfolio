@@ -22,7 +22,7 @@ export default function About() {
             My Story
           </h2>
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-white mb-4">
-            Turning <span className="text-blue-500">Curiosity</span> Into <span className="text-blue-500">Creations</span>!
+            Turning <span className="text-blue-500">Curiosity</span> <br/>Into <span className="text-blue-500">Creations</span>!
           </h1>
         </div>
 
