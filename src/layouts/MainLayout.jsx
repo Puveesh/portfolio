@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
 import { useTheme } from "../hooks/useTheme";
+import PortfolioAssistant from "../components/PortfolioAssistant";
 
 export default function MainLayout() {
   const { isDark } = useTheme();
@@ -26,6 +27,7 @@ export default function MainLayout() {
       </main>
 
       <Footer />
+      <PortfolioAssistant />
     </div>
   );
 }

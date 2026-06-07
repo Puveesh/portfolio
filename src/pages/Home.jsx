@@ -251,7 +251,7 @@ export default function Home() {
                 className="relative"
               >
                 {/* Timeline Indicator Dot */}
-                <span className="absolute -left-[41px] md:-left-[69px] top-1.5 flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-darkBg border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 shadow-sm z-10 transition-colors group-hover:border-blue-500">
+                <span className="absolute -left-[54px] md:-left-[70px] top-1.5 flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-darkBg border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 shadow-sm z-10 transition-colors group-hover:border-blue-500">
                   {isWork ? (<Briefcase size={20} />) : (isHack ? <BrainCircuit size={20} /> : <GraduationCap size={20} />)}
                 </span>
 
