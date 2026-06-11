@@ -22,7 +22,7 @@ export default function Navbar() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="sticky top-0 z-40 w-full glassmorphism bg-neutral-100/50 dark:glass-dark border-b border-neutral-200/50 dark:border-neutral-800/50"
+      className="fixed top-0 left-0 right-0 z-50 w-full glassmorphism bg-neutral-100/40 dark:glass-dark border-b border-neutral-200/50 dark:border-neutral-800/50"
     >
       <div className="mx-auto flex max-w-6xl h-17 items-center justify-between px-6">
         {/* Brand Logo */}

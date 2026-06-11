@@ -98,7 +98,7 @@ export const portfolioData = {
       id: "mobile-app",
       title: "PulseBeat: Smart Music Player",
       description: "A modern Android music player built with Android Studio and ExoPlayer, featuring background playback, waveform-based UI interactions, favorites management, and a smooth immersive listening experience.",
-      image: "/PulseBeat.png",
+      image: "/PulseBeat.jpeg",
       tags: ["Android", "Kotlin", "ExoPlayer", "Java"],
       githubUrl: "https://github.com/puveesh",
       liveUrl: "./public/PulseBeat.apk",

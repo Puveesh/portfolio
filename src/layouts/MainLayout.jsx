@@ -22,7 +22,7 @@ export default function MainLayout() {
       <Navbar />
       
       {/* Route Outlet */}
-      <main className="relative z-10 flex-grow flex flex-col w-full max-w-6xl mx-auto px-6 py-8 md:py-16">
+      <main className="relative z-10 flex-grow flex flex-col w-full max-w-6xl mx-auto px-6 pt-24 md:pt-22 py-8 md:py-16">
         <Outlet />
       </main>
 
