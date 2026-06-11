@@ -42,7 +42,9 @@ export default function Navbar() {
                 to={link.path}
                 className={cn(
                   "relative px-4 py-1.5 text-xs font-medium uppercase tracking-wider theme-transition hover:text-neutral-900 dark:hover:text-white",
-                  isActive ? "text-neutral-900 dark:text-white" : "text-neutral-800"
+                  isActive
+                    ? "text-neutral-900 dark:text-white"
+                    : "text-neutral-600 dark:text-neutral-400"
                 )}
               >
                 {isActive && (

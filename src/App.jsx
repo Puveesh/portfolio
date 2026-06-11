@@ -18,7 +18,7 @@ export default function App() {
       
       {!isLoading && (
         <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
+          <Routes location={location} >
             <Route path="/" element={<MainLayout />}>
               <Route index element={<Home />} />
               <Route path="projects" element={<Projects />} />
