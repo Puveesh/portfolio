@@ -11,7 +11,7 @@ export default function Footer() {
         {/* Left: Brand/Copyright */}
         <div className="text-center md:text-left">
           <p className="text-[12px] uppercase tracking-[0.15em] text-neutral-500 dark:text-neutral-400">
-            &copy; {new Date().getFullYear()}. {name}. Built with precision & Passion.
+            &copy; {new Date().getFullYear()}. {name} | Built with passion | Since 2026.
           </p>
         </div>
 
