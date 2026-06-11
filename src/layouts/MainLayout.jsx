@@ -27,7 +27,7 @@ export default function MainLayout() {
       </main>
 
       <Footer />
-      <PortfolioAssistant />
+      {/* <PortfolioAssistant /> */}
     </div>
   );
 }
