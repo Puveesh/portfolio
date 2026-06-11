@@ -68,7 +68,10 @@ export default function Contact() {
             Let's Collaborate!
           </h1>
           <p className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed font-light">
-            I am always open to exploring novel engineering challenges, premium interface designs, or strategic technical roles. Fill in the form or reach out directly.
+            I'm open to freelance work, custom solutions, and collaborations in web development, AI, and emerging technologies.{" "}
+            <span className="font-semibold text-neutral-800 dark:text-neutral-100">
+              Need a website, app, or intelligent system? Let's connect.
+            </span>
           </p>
         </div>
 
