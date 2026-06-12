@@ -17,6 +17,7 @@
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
+    overflow-y: scroll;
   }
 
   body {
