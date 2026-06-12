@@ -8,6 +8,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import LoadingScreen from "./components/LoadingScreen";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 
 export default function App() {
   const location = useLocation();
@@ -30,6 +32,7 @@ export default function App() {
         </AnimatePresence>
       )}
       <Analytics />
+      <SpeedInsights />
     </>
   );
 }
