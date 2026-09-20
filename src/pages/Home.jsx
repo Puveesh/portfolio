@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
@@ -12,7 +11,8 @@ import {
   Briefcase,
   GraduationCap,
   BrainCircuit,
-  Languages
+  Languages,
+  Bug
 } from "lucide-react";
 import { portfolioData } from "../data/portfolioData";
 import PageTransition from "../components/PageTransition";
@@ -51,6 +51,7 @@ export default function Home() {
     ai_ml: <Cpu className="text-purple-500" size={18} />,
     language: <Languages className="text-violet-500" size={18} />,
     tools: <Terminal className="text-amber-500" size={18} />,
+    testing: <Bug className="text-pink-500" size={18} />,
   };
 
   return (
@@ -189,7 +190,7 @@ export default function Home() {
             <motion.div
               key={category}
               variants={fadeInUp}
-              whileHover={{ y: -20 }}
+              whileHover={{ y: -10 }}
               className="flex flex-col rounded-xl border border-neutral-200/60 dark:border-neutral-800/80 bg-neutral-50/30 dark:bg-neutral-900/30 p-6 shadow-sm hover:shadow-md transition-all duration-20 glassmorphism"
             >
               <div className="flex items-center space-x-3 mb-6">

@@ -7,6 +7,7 @@ import Projects from "./pages/Projects";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import LoadingScreen from "./components/LoadingScreen";
+import MagneticCursor from "./components/MagneticCursor";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
@@ -17,6 +18,7 @@ export default function App() {
 
   return (
     <>
+      {/* <MagneticCursor /> */}
       <LoadingScreen onComplete={() => setIsLoading(false)} />
       
       {!isLoading && (

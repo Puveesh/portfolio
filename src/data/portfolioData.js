@@ -58,6 +58,7 @@ export const portfolioData = {
       { name: "Springboot", level: 93 },
       { name: "FastAPI", level: 85 },
     ],
+    //DSA should be added in the future
     language: [
       { name: "Python", level: 95 },
       { name: "Java", level: 85 },
@@ -65,10 +66,15 @@ export const portfolioData = {
       { name: "SQL", level: 92 },
     ],
     tools: [
-      { name: "Git", level: 89 },
-      { name: "GitHub", level: 95 },
-      { name: "Vercel", level: 96 },
-      { name: "Figma", level: 75 },
+      { name: "Git", level: 85 },
+      { name: "GitHub", level: 90 },
+      { name: "Vercel", level: 90 },
+      { name: "Figma", level: 70 },
+      { name: "VS Code/Antigravity", level: 90 },
+    ],
+    testing: [
+      { name: "Selenium", level: 85 },
+      { name: "Testng", level: 80 },
     ],
   },
   projects: [
@@ -97,7 +103,7 @@ export const portfolioData = {
       category: "hardware",
     },
     {
-      id: "frontend",
+      id: "portfolio",
       title: "Portfolio",
       description: "A premium personal portfolio platform designed to showcase software engineering projects, AI-driven applications, cybersecurity work, and creative development through immersive UI interactions and modern web technologies.",
       image: "/portfolio.png",
@@ -108,7 +114,18 @@ export const portfolioData = {
       category: "frontend",
     },
     {
-      id: "full-stack",
+      id: "food-truck",
+      title: "Food-Truck Vendor Application System",
+      description: "A centralized web platform that simplifies food truck vendor registration, application submission, document management, review, inspection, and license tracking through a secure, role-based workflow.",
+      image: "/food-truck.png",
+      tags: ["Full-Stack", "React", "Springboot", "MySQL", "JWT", "Swagger"],
+      githubUrl: "https://github.com/Puveesh/FoodTruckVendor",
+      liveUrl: "/projects",
+      linkedin: "https://linkedin.com/in/puveesh-keshav-m-24475b309",
+      category: "full",
+    },
+    {
+      id: "Chat",
       title: "YapiChat: Minimal Private Messaging",
       description: "A focused full-stack chat application built with React, Supabase, and Vercel, designed for meaningful 1-on-1 conversations through private messaging, voice notes, and media sharing in a distraction-free environment.",
       image: "/YapiChat.png",
@@ -139,7 +156,7 @@ export const portfolioData = {
       liveUrl: "/projects",
       linkedin: "https://linkedin.com/in/puveesh-keshav-m-24475b309",
       category: "backend",
-    },
+    }
   ],
   timeline: [
     {
