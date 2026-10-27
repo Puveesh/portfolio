@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import { cn } from "../utils/cn";
 import { portfolioData } from "../data/portfolioData";
+import { isValidUrl } from "../utils/linkUtils";
 
 const navLinks = [
   { path: "/", label: "Home" },
@@ -16,6 +17,7 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const hasResume = isValidUrl(portfolioData?.personalInfo?.resumeUrl);
 
   return (
     <motion.header
@@ -63,15 +65,17 @@ export default function Navbar() {
         {/* Desktop Theme Toggle + Call to Action */}
         <div className="hidden md:flex items-center space-x-4">
           <ThemeToggle />
-          <a
-            href={portfolioData.personalInfo.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center space-x-1 rounded-lg bg-neutral-900 dark:bg-white px-4 py-2 text-xs font-semibold text-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors"
-          >
-            <span>Resume</span>
-            <ArrowUpRight size={12} />
-          </a>
+          {hasResume && (
+            <a
+              href={portfolioData.personalInfo.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-1 rounded-lg bg-neutral-900 dark:bg-white px-4 py-2 text-xs font-semibold text-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors"
+            >
+              <span>Resume</span>
+              <ArrowUpRight size={12} />
+            </a>
+          )}
         </div>
 
         {/* Mobile controls */}
@@ -120,17 +124,19 @@ export default function Navbar() {
                   </motion.div>
                 );
               })}
-              <motion.a
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navLinks.length * 0.04 }}
-                href={portfolioData.personalInfo.resumeUrl}
-                onClick={() => setIsOpen(false)}
-                className="flex items-center justify-center space-x-1.5 rounded-lg bg-neutral-900 dark:bg-white py-3 text-xs uppercase tracking-wider font-semibold text-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors"
-              >
-                <span>Download Resume</span>
-                <ArrowUpRight size={14} />
-              </motion.a>
+              {hasResume && (
+                <motion.a
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: navLinks.length * 0.04 }}
+                  href={portfolioData.personalInfo.resumeUrl}
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center justify-center space-x-1.5 rounded-lg bg-neutral-900 dark:bg-white py-3 text-xs uppercase tracking-wider font-semibold text-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors"
+                >
+                  <span>Download Resume</span>
+                  <ArrowUpRight size={14} />
+                </motion.a>
+              )}
             </div>
           </motion.div>
         )}

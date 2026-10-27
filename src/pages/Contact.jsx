@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Mail, MapPin, Send, CheckCircle2, ArrowRight } from "lucide-react";
 import { portfolioData } from "../data/portfolioData";
 import PageTransition from "../components/PageTransition";
+import { isValidUrl } from "../utils/linkUtils";
 
 export default function Contact() {
   const { socials } = portfolioData.personalInfo;
@@ -56,6 +57,8 @@ export default function Contact() {
     setIsSubmitting(false);
   };
 
+  const hasAnySocial = isValidUrl(socials?.github) || isValidUrl(socials?.linkedin) || isValidUrl(socials?.instagram);
+
   return (
     <PageTransition>
       <section className="pointer-events-auto">
@@ -93,63 +96,73 @@ export default function Contact() {
             </div>
 
             {/* Direct Connect Elements */}
-            <div className="space-y-4">
-              <h3 className="text-xs uppercase tracking-wider font-bold text-neutral-900 dark:text-white">
-                Direct Inquiry
-              </h3>
-              <a
-                href={`mailto:${socials.email}`}
-                className="flex items-center space-x-4 p-4 rounded-xl border border-neutral-200/50 dark:border-neutral-800/80 bg-neutral-50/20 dark:bg-neutral-950/20 hover:bg-neutral-100/50 dark:hover:bg-neutral-900/50 hover:border-blue-500/30 dark:hover:border-blue-500/20 transition-all duration-300 shadow-sm group"
-              >
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-500/10 text-blue-500 group-hover:scale-105 transition-transform duration-300">
-                  <Mail size={16} />
-                </div>
-                <div>
-                  <div className="text-[10px] uppercase tracking-wider font-semibold text-neutral-400">
-                    Email Address
+            {isValidUrl(socials?.email) && (
+              <div className="space-y-4">
+                <h3 className="text-xs uppercase tracking-wider font-bold text-neutral-900 dark:text-white">
+                  Direct Inquiry
+                </h3>
+                <a
+                  href={`mailto:${socials.email}`}
+                  className="flex items-center space-x-4 p-4 rounded-xl border border-neutral-200/50 dark:border-neutral-800/80 bg-neutral-50/20 dark:bg-neutral-950/20 hover:bg-neutral-100/50 dark:hover:bg-neutral-900/50 hover:border-blue-500/30 dark:hover:border-blue-500/20 transition-all duration-300 shadow-sm group"
+                >
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-500/10 text-blue-500 group-hover:scale-105 transition-transform duration-300">
+                    <Mail size={16} />
                   </div>
-                  <div className="text-xs font-bold text-neutral-950 dark:text-white">
-                    {socials.email}
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wider font-semibold text-neutral-400">
+                      Email Address
+                    </div>
+                    <div className="text-xs font-bold text-neutral-950 dark:text-white">
+                      {socials.email}
+                    </div>
                   </div>
-                </div>
-              </a>
-            </div>
-
-            {/* Social Grid Connections */}
-            <div className="space-y-4">
-              <h3 className="text-x uppercase tracking-wider font-bold text-neutral-900 dark:text-white">
-                Social Networks
-              </h3>
-              <div className="grid grid-cols-2 gap-3">
-                <a
-                  href={socials.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between p-3 rounded-lg border border-neutral-200/50 dark:border-neutral-800/80 hover:bg-neutral-100/40 dark:hover:bg-neutral-900/40 transition-colors text-xs font-semibold text-neutral-700 dark:text-neutral-300"
-                >
-                  <span>GitHub</span>
-                  <ArrowRight size={12} className="text-neutral-400" />
-                </a>
-                <a
-                  href={socials.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between p-3 rounded-lg border border-neutral-200/50 dark:border-neutral-800/80 hover:bg-neutral-100/40 dark:hover:bg-neutral-900/40 transition-colors text-xs font-semibold text-neutral-700 dark:text-neutral-300"
-                >
-                  <span>LinkedIn</span>
-                  <ArrowRight size={12} className="text-neutral-400" />
-                </a>
-                <a
-                  href={socials.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between p-3 rounded-lg border border-neutral-200/50 dark:border-neutral-800/80 hover:bg-neutral-100/40 dark:hover:bg-neutral-900/40 transition-colors text-xs font-semibold text-neutral-700 dark:text-neutral-300"
-                >
-                  <span>Instagram</span>
-                  <ArrowRight size={12} className="text-neutral-400" />
                 </a>
               </div>
-            </div>
+            )}
+
+            {/* Social Grid Connections */}
+            {hasAnySocial && (
+              <div className="space-y-4">
+                <h3 className="text-x uppercase tracking-wider font-bold text-neutral-900 dark:text-white">
+                  Social Networks
+                </h3>
+                <div className="grid grid-cols-2 gap-3">
+                  {isValidUrl(socials?.github) && (
+                    <a
+                      href={socials.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-between p-3 rounded-lg border border-neutral-200/50 dark:border-neutral-800/80 hover:bg-neutral-100/40 dark:hover:bg-neutral-900/40 transition-colors text-xs font-semibold text-neutral-700 dark:text-neutral-300"
+                    >
+                      <span>GitHub</span>
+                      <ArrowRight size={12} className="text-neutral-400" />
+                    </a>
+                  )}
+                  {isValidUrl(socials?.linkedin) && (
+                    <a
+                      href={socials.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-between p-3 rounded-lg border border-neutral-200/50 dark:border-neutral-800/80 hover:bg-neutral-100/40 dark:hover:bg-neutral-900/40 transition-colors text-xs font-semibold text-neutral-700 dark:text-neutral-300"
+                    >
+                      <span>LinkedIn</span>
+                      <ArrowRight size={12} className="text-neutral-400" />
+                    </a>
+                  )}
+                  {isValidUrl(socials?.instagram) && (
+                    <a
+                      href={socials.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-between p-3 rounded-lg border border-neutral-200/50 dark:border-neutral-800/80 hover:bg-neutral-100/40 dark:hover:bg-neutral-900/40 transition-colors text-xs font-semibold text-neutral-700 dark:text-neutral-300"
+                    >
+                      <span>Instagram</span>
+                      <ArrowRight size={12} className="text-neutral-400" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            )}
 
           </div>
 

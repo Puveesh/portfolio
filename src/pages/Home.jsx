@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { portfolioData } from "../data/portfolioData";
 import PageTransition from "../components/PageTransition";
+import { isValidUrl } from "../utils/linkUtils";
 
 // Container transition helper
 const staggerContainer = {
@@ -112,15 +113,17 @@ export default function Home() {
               <span>Explore Projects</span>
               <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
             </Link>
-            <a
-              href={personalInfo.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center space-x-2 w-full sm:w-auto rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/50 text-neutral-800 dark:text-neutral-200 px-6 py-3 text-sm font-semibold hover:bg-neutral-100/80 dark:hover:bg-neutral-800/80 transition-colors duration-300 shadow-sm"
-            >
-              <Download size={14} />
-              <span>Get Resume</span>
-            </a>
+            {isValidUrl(personalInfo?.resumeUrl) && (
+              <a
+                href={personalInfo.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center space-x-2 w-full sm:w-auto rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/50 text-neutral-800 dark:text-neutral-200 px-6 py-3 text-sm font-semibold hover:bg-neutral-100/80 dark:hover:bg-neutral-800/80 transition-colors duration-300 shadow-sm"
+              >
+                <Download size={14} />
+                <span>Get Resume</span>
+              </a>
+            )}
           </motion.div>
         </motion.div>
       </section>

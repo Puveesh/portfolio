@@ -4,7 +4,7 @@ export const portfolioData = {
     // role: "Full-Stack & AI Engineer",
     tagline: "Building premium digital interfaces and intelligent web experiences.",
     intro: "I design and develop premium, minimalistic, and highly interactive web applications that blend modern design aesthetics with state-of-the-art AI systems. Beyond tech, I’m also passionate about music production and sound design.",
-    resumeUrl: "Resume.pdf",
+    resumeUrl: "Resume V3.pdf",
     socials: {
       github: "https://github.com/Puveesh",
       linkedin: "https://linkedin.com/in/puveesh-keshav-m-24475b309",
@@ -79,6 +79,79 @@ export const portfolioData = {
   },
   projects: [
     {
+      id: "drone",
+      title: "DIY Drone Build",
+      description: "Designed and built a custom drone as a hands-on project driven by my passion for flying drones and exploring electronics. Gained practical experience in drone assembly, component selection, motor and ESC integration, LiPo battery systems, flight controller configuration, and troubleshooting while learning the fundamentals of FPV flight.",
+      image: "dphoto_2.jpg",
+      tags: ["Mamba FC Stack", "ELRS", "Radiomaster Pocket", "Embedded Systems", "Flight Controller", "Drone"],
+      githubUrl: null,
+      liveUrl: null,
+      liveLabel: null,
+      liveLogo: null,
+      linkedin: null,
+      category: "hardware",
+      media: [
+        {
+          type: "image",
+          src: "dphoto_1.jpg",
+          title: "FPV Drone Build",
+        },
+        {
+          type: "image",
+          src: "dphoto_3.jpg",
+          title: "FPV Drone Build",
+        },
+        {
+          type: "image",
+          src: "dphoto_4.jpg",
+          title: "FPV Drone Build",
+        },
+        {
+          type: "image",
+          src: "dphoto_5.jpg",
+          title: "FPV Drone Build",
+        },
+        {
+          type: "image",
+          src: "dphoto_6.jpg",
+          title: "FPV Drone Build",
+        },
+        {
+          type: "image",
+          src: "dphoto_7.jpg",
+          title: "FPV Drone Build",
+        },
+        {
+          type: "image",
+          src: "dphoto_8.jpg",
+          title: "FPV Drone Build",
+        },
+        {
+          type: "image",
+          src: "dphoto_9.jpg",
+          title: "FPV Drone Build",
+        },
+        {
+          type: "video",
+          src: "/dvideo_1.mp4",
+          // poster:"dphoto_1.jpg",
+          title: "FPV Drone Flight & Hardware Demonstration",
+        },
+        {
+          type: "video",
+          src: "/dvideo_2.mp4",
+          // poster:"dphoto_1.jpg",
+          title: "FPV Drone Flight & Hardware Demonstration",
+        },
+        {
+          type: "video",
+          src: "/dvideo_3.mp4",
+          // poster:"dphoto_1.jpg",
+          title: "FPV Drone Flight & Hardware Demonstration",
+        },
+      ],
+    },
+    {
       id: "aws",
       title: "AWS Nova Skill Sprint – April 2026",
       description: "Completed the AWS Builders Skill Sprint by developing AI agents with Amazon Nova, Amazon Bedrock, and the Strands SDK, featuring tool integration, memory, streaming, and MCP support.",
@@ -97,10 +170,20 @@ export const portfolioData = {
       description: "A prototype IoT-based weather monitoring system built using NodeMCU and sensor integration, designed to collect, process, and visualize real-time environmental data through embedded hardware and smart sensing technologies.",
       image: "/weather 2.jpeg",
       tags: ["Hardware", "C++", "NodeMCU", "Sensors", "ESP8266", "IoT"],
-      githubUrl: "https://github.com/Puveesh/",
-      liveUrl: "/projects",
-      linkedin: "https://linkedin.com/in/puveesh-keshav-m-24475b309",
+      githubUrl: null,
+      liveUrl: null,
+      linkedin: null,
       category: "hardware",
+      media: [
+        // Empty media array to demonstrate fallback state ("Project media coming soon")
+        // Add project media items here when ready:
+        // {
+        //   type: "image",
+        //   src: "/weather 2.jpeg",
+        //   alt: "ClimateSync sensor and NodeMCU setup",
+        //   title: "Sensor Circuit Integration"
+        // }
+      ],
     },
     {
       id: "portfolio",
