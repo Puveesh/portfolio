@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Search, X } from "lucide-react";
 import { portfolioData } from "../data/portfolioData";
 import PageTransition from "../components/PageTransition";
 import HardwareProjectGallery from "../components/HardwareProjectGallery";
@@ -19,6 +19,7 @@ const filters = [
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
   const [selectedHardwareProject, setSelectedHardwareProject] = useState(null);
   const { projects } = portfolioData;
 
@@ -32,9 +33,21 @@ export default function Projects() {
     return counts;
   }, [projects]);
 
-  const filteredProjects = activeFilter === "all"
-    ? projects
-    : projects.filter((project) => project.category === activeFilter);
+  const filteredProjects = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
+
+    return projects.filter((project) => {
+      // 1. Category filter
+      const matchesCategory =
+        activeFilter === "all" || project.category === activeFilter;
+      if (!matchesCategory) return false;
+
+      // 2. Search query filter (strictly by project title)
+      if (!query) return true;
+
+      return project.title?.toLowerCase().includes(query);
+    });
+  }, [projects, activeFilter, searchQuery]);
 
   return (
     <PageTransition>
@@ -56,42 +69,69 @@ export default function Projects() {
           </p>
         </div>
 
-        {/* Dynamic Filtering Tabs */}
-        <div className="flex flex-wrap items-center gap-1.5 border-b border-neutral-200/50 dark:border-neutral-800/50 pb-4 mb-10">
-          {filters.map((filter) => {
-            const isActive = activeFilter === filter.id;
-            const count = projectCounts[filter.id] || 0;
+        {/* Dynamic Filtering Tabs & Search Bar */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-neutral-200/50 dark:border-neutral-800/50 pb-4 mb-10">
+          {/* Category Tabs */}
+          <div className="flex flex-wrap items-center gap-0.5">
+            {filters.map((filter) => {
+              const isActive = activeFilter === filter.id;
+              const count = projectCounts[filter.id] || 0;
 
-            return (
-              <button
-                key={filter.id}
-                onClick={() => setActiveFilter(filter.id)}
-                className={cn(
-                  "relative inline-flex items-center gap-1.5 px-4 py-2 text-xs uppercase tracking-wider font-semibold transition-colors duration-300",
-                  isActive ? "text-neutral-950 dark:text-white" : "text-neutral-400 dark:text-neutral-500 hover:text-neutral-600 dark:hover:text-neutral-300"
-                )}
-              >
-                {isActive && (
-                  <motion.span
-                    layoutId="activeFilterTab"
-                    transition={{ type: "spring", stiffness: 350, damping: 28 }}
-                    className="absolute inset-0 rounded-lg bg-neutral-100 dark:bg-neutral-900/60 -z-10"
-                  />
-                )}
-                <span>{filter.label}</span>
-                <span
+              return (
+                <button
+                  key={filter.id}
+                  onClick={() => setActiveFilter(filter.id)}
                   className={cn(
-                    "text-[10px] font-medium transition-colors",
-                    isActive
-                      ? "text-neutral-500 dark:text-neutral-400"
-                      : "text-neutral-400/80 dark:text-neutral-500"
+                    "relative inline-flex items-center gap-1.5 px-4 py-2 text-xs uppercase tracking-wider font-semibold transition-colors duration-300",
+                    isActive ? "text-neutral-950 dark:text-white" : "text-neutral-400 dark:text-neutral-500 hover:text-neutral-600 dark:hover:text-neutral-300"
                   )}
                 >
-                  ({count})
-                </span>
+                  {isActive && (
+                    <motion.span
+                      layoutId="activeFilterTab"
+                      transition={{ type: "spring", stiffness: 350, damping: 28 }}
+                      className="absolute inset-0 rounded-lg bg-neutral-100 dark:bg-neutral-900/60 -z-10"
+                    />
+                  )}
+                  <span>{filter.label}</span>
+                  <span
+                    className={cn(
+                      "text-[10px] font-medium transition-colors",
+                      isActive
+                        ? "text-neutral-500 dark:text-neutral-400"
+                        : "text-neutral-400/80 dark:text-neutral-500"
+                    )}
+                  >
+                    ({count})
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Search Bar */}
+          <div className="relative w-full md:w-54 shrink-0">
+            <Search
+              size={14}
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400 dark:text-neutral-500 pointer-events-none"
+            />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search by project title..."
+              className="w-full pl-9 pr-8 py-2 text-xs rounded-lg border border-neutral-200/80 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-900/60 text-neutral-900 dark:text-neutral-100 placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery("")}
+                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200 p-0.5 rounded-full"
+                aria-label="Clear search"
+              >
+                <X size={12} />
               </button>
-            );
-          })}
+            )}
+          </div>
         </div>
 
         {/* Shuffling Grid Layout */}
@@ -240,6 +280,38 @@ export default function Projects() {
               );
             })}
           </AnimatePresence>
+
+          {/* Empty search results state */}
+          {filteredProjects.length === 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="col-span-full py-16 flex flex-col items-center justify-center text-center"
+            >
+              <div className="w-12 h-12 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 flex items-center justify-center text-neutral-400 mb-4">
+                <Search size={20} />
+              </div>
+              <h3 className="text-sm font-semibold text-neutral-800 dark:text-neutral-200 mb-1">
+                No matching projects
+              </h3>
+              <p className="text-xs text-neutral-500 dark:text-neutral-400 max-w-sm mb-4">
+                {searchQuery
+                  ? `No projects found with title matching "${searchQuery}". Try a different title or category.`
+                  : "No projects in this category."}
+              </p>
+              {(searchQuery || activeFilter !== "all") && (
+                <button
+                  onClick={() => {
+                    setSearchQuery("");
+                    setActiveFilter("all");
+                  }}
+                  className="px-4 py-2 text-xs font-semibold rounded-lg bg-neutral-900 dark:bg-white text-white dark:text-black hover:opacity-90 transition-opacity"
+                >
+                  Reset Filters
+                </button>
+              )}
+            </motion.div>
+          )}
         </motion.div>
 
         {/* Dedicated Hardware Project Showcase Modal */}

@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { 
-  ArrowRight, 
-  Download, 
-  Code, 
-  Server, 
-  Cpu, 
+import {
+  ArrowRight,
+  Download,
+  Code,
+  Server,
+  Cpu,
   Terminal,
   Calendar,
   Briefcase,
@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { portfolioData } from "../data/portfolioData";
 import PageTransition from "../components/PageTransition";
+import CodeWindow from "../components/CodeWindow";
 import { isValidUrl } from "../utils/linkUtils";
 
 // Container transition helper
@@ -31,14 +32,14 @@ const staggerContainer = {
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
-  show: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { 
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
       type: "spring",
-      stiffness: 100, 
-      damping: 15 
-    } 
+      stiffness: 100,
+      damping: 15
+    }
   },
 };
 
@@ -59,6 +60,9 @@ export default function Home() {
     <PageTransition>
       {/* 1. HERO SECTION */}
       <section className="relative flex flex-col items-center text-center justify-center min-h-[0vh] py-12 md:py-20 pointer-events-auto">
+        {/* Background macOS Code Editor Window (adjust opacity here: e.g. 0.2, 0.4, 0.6, 0.8) */}
+        <CodeWindow opacity={0.40} />
+
         {/* Glow behind title */}
         <div className="absolute top-[30%] w-[300px] h-[300px] rounded-full bg-blue-500/10 dark:bg-blue-400/[0.04] blur-[100px] pointer-events-none" />
 

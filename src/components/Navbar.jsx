@@ -14,6 +14,67 @@ const navLinks = [
   { path: "/contact", label: "Contact" },
 ];
 
+const logoLetters = [
+  { char: "P", key: "p" },
+  { char: "K", key: "k" },
+];
+
+const letterRollVariants = {
+  initial: (custom) => ({
+    y: "0%",
+    transition: {
+      duration: 0.35,
+      ease: [0.22, 1, 0.36, 1],
+      delay: (1 - custom) * 0.04,
+    },
+  }),
+  hover: (custom) => ({
+    y: "-100%",
+    transition: {
+      duration: 0.35,
+      ease: [0.22, 1, 0.36, 1],
+      delay: custom * 0.06,
+    },
+  }),
+};
+
+const cloneRollVariants = {
+  initial: (custom) => ({
+    y: "100%",
+    transition: {
+      duration: 0.35,
+      ease: [0.22, 1, 0.36, 1],
+      delay: (1 - custom) * 0.04,
+    },
+  }),
+  hover: (custom) => ({
+    y: "0%",
+    transition: {
+      duration: 0.35,
+      ease: [0.22, 1, 0.36, 1],
+      delay: custom * 0.06,
+    },
+  }),
+};
+
+const dotVariants = {
+  initial: {
+    y: 0,
+    transition: {
+      duration: 0.3,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+  hover: {
+    y: [-1, -4, 0],
+    transition: {
+      duration: 0.4,
+      ease: [0.34, 1.56, 0.64, 1],
+      delay: 0.12,
+    },
+  },
+};
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
@@ -28,10 +89,52 @@ export default function Navbar() {
     >
       <div className="mx-auto flex max-w-6xl h-17 items-center justify-between px-6">
         {/* Brand Logo */}
-        <Link to="/" className="flex items-center space-x-1 hover:opacity-85 transition-opacity">
-          <span className="text-lg font-bold tracking-[0.2em] text-neutral-900 dark:text-white uppercase">
-            pk<span className="text-blue-500 ">.</span>
-          </span>
+        <Link
+          to="/"
+          className="group relative flex items-center"
+          aria-label="Puveesh Keshav - Home"
+        >
+          <motion.div
+            whileHover="hover"
+            initial="initial"
+            className="relative flex items-center select-none"
+          >
+            <span className="relative inline-flex items-center text-lg font-bold tracking-[0.2em] uppercase">
+              {logoLetters.map((letter, index) => (
+                <span
+                  key={letter.key}
+                  className="relative inline-block overflow-hidden"
+                >
+                  {/* Default letter */}
+                  <motion.span
+                    custom={index}
+                    variants={letterRollVariants}
+                    className="inline-block text-neutral-900 dark:text-white"
+                  >
+                    {letter.char}
+                  </motion.span>
+
+                  {/* Hover animated letter with electric blue/cyan gradient */}
+                  <motion.span
+                    custom={index}
+                    variants={cloneRollVariants}
+                    className="absolute left-0 top-0 inline-block bg-gradient-to-r from-blue-500 via-indigo-500 to-cyan-400 bg-clip-text text-transparent"
+                    aria-hidden="true"
+                  >
+                    {letter.char}
+                  </motion.span>
+                </span>
+              ))}
+
+              {/* Dot character (sharp, zero glow) */}
+              <motion.span
+                variants={dotVariants}
+                className="inline-block text-blue-500"
+              >
+                .
+              </motion.span>
+            </span>
+          </motion.div>
         </Link>
 
         {/* Desktop Navigation Links */}
